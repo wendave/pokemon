@@ -1,7 +1,7 @@
 // preloaded function
 var preloader = () => {
-  document.body.classList.add("body-loaded");
   setTimeout(() => {
+    document.body.classList.add("body-loaded");
     document.getElementById("preloader").classList.add("preloader-loaded");
   }, 1000);
 }

@@ -89,6 +89,7 @@ input[type="text"] {
   }
 }
 
+// global overlay styles
 .overlay {
   position: absolute;
   top: 0;
@@ -106,6 +107,7 @@ input[type="text"] {
   }
 }
 
+// global opacity styles
 .opacity {
   &-10 {
     opacity: .1;
@@ -145,5 +147,14 @@ input[type="text"] {
   
   &-100 {
     opacity: 1;
+  }
+}
+
+// custom styles for body
+body {
+  overflow: hidden;
+
+  &.body-loaded {
+    overflow: unset;
   }
 }
