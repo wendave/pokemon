@@ -24,7 +24,8 @@ $text-color: #222 !default;
 
 /// Main brand color
 /// @type Color
-$brand-color: #4868db !default;
+$brand-color: #4671ef !default;
+$brand-color-alternate: #fff710;
 
 /// Light grey
 /// @type Color
@@ -43,3 +44,17 @@ $dark-grey: #444 !default;
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '../assets/' !default;
+
+// Custom Colors
+$pokeball-red: #e20f07;
+$pokeball-blue: #278de1;
+$pokeball-yellow: #ffff00;
+$pokeball-purple: #481a66;
+$pokeball-pink: #eb23aa;
+$pokeball-brown: #9a4a01;
+$pokeball-moss: #606700;
+$pokeball-green: #5fa300;
+$pokeball-gray: #a5a5a5;
+
+$black: #000;
+$white: #fff;

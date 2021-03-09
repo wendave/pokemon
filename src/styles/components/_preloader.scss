@@ -1,0 +1,221 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the preloader component.
+// -----------------------------------------------------------------------------
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+  opacity: 1;
+  transform: scale(1);
+  transition: all .5s ease-in-out;
+
+  &.preloader-loaded {
+    opacity: 0;
+    transform: scale(2);
+    pointer-events: none;
+
+    .pokeballs {
+      opacity: 0;
+    }
+  }
+  
+  .pokeballs {
+    height: 48px;
+    width: 264px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+    transition: all .35s ease-in-out;
+  }
+
+  .pokeball {
+    width: 4px;
+    height: 4px;
+    transform-origin: 24px 24px;
+    animation: rotateBall 1.5s infinite forwards;
+
+    &.normal {
+      box-shadow: 
+        //Row: 1
+        16px 0 0 $black, 20px 0 0 $black, 24px 0 0 $black, 28px 0 0 $black,
+        //Row: 2
+        8px 4px 0 $black, 12px 4px 0 $black, 16px 4px 0 $pokeball-red, 20px 4px 0 $pokeball-red, 24px 4px 0 $pokeball-red, 28px 4px 0 $pokeball-red, 32px 4px 0 $black, 36px 4px 0 $black,
+        // //Row: 3
+        // 4px 8px 0 $black, 8px 8px 0 $pokeball-red, 12px 8px 0 $pokeball-red, 16px 8px 0 $white, 20px 8px 0 $pokeball-red, 24px 8px 0 $pokeball-red, 28px 8px 0 $pokeball-red, 32px 8px 0 $pokeball-red, 36px 8px 0 $pokeball-red, 40px 8px 0 $black, 
+        // //Row: 4
+        // 4px 12px 0 $black, 8px 12px 0 $pokeball-red, 12px 12px 0 $white, 16px 12px 0 $white, 20px 12px 0 $white, 24px 12px 0 $pokeball-red, 28px 12px 0 $pokeball-red, 32px 12px 0 $pokeball-red, 36px 12px 0 $pokeball-red, 40px 12px 0 $black,
+        // //Row: 5
+        // 0px 16px 0 $black, 4px 16px 0 $pokeball-red, 8px 16px 0 $pokeball-red, 12px 16px 0 $pokeball-red, 16px 16px 0 $white, 20px 16px 0 $pokeball-red, 24px 16px 0 $pokeball-red, 28px 16px 0 $pokeball-red, 32px 16px 0 $pokeball-red, 36px 16px 0 $pokeball-red, 40px 16px 0 $pokeball-red, 44px 16px 0 $black,
+        //Row: 3
+        4px 8px 0 $black, 8px 8px 0 $pokeball-red, 12px 8px 0 $pokeball-red, 16px 8px 0 $pokeball-red, 20px 8px 0 $pokeball-red, 24px 8px 0 $pokeball-red, 28px 8px 0 $pokeball-red, 32px 8px 0 $pokeball-red, 36px 8px 0 $pokeball-red, 40px 8px 0 $black,         
+        //Row: 4
+        4px 12px 0 $black, 8px 12px 0 $pokeball-red, 12px 12px 0 $pokeball-red, 16px 12px 0 $pokeball-red, 20px 12px 0 $pokeball-red, 24px 12px 0 $pokeball-red, 28px 12px 0 $pokeball-red, 32px 12px 0 $pokeball-red, 36px 12px 0 $pokeball-red, 40px 12px 0 $black,
+        //Row: 5
+        0px 16px 0 $black, 4px 16px 0 $pokeball-red, 8px 16px 0 $pokeball-red, 12px 16px 0 $pokeball-red, 16px 16px 0 $pokeball-red, 20px 16px 0 $pokeball-red, 24px 16px 0 $pokeball-red, 28px 16px 0 $pokeball-red, 32px 16px 0 $pokeball-red, 36px 16px 0 $pokeball-red, 40px 16px 0 $pokeball-red, 44px 16px 0 $black,
+        //Row: 6
+        0px 20px 0 $black, 4px 20px 0 $pokeball-red, 8px 20px 0 $pokeball-red, 12px 20px 0 $pokeball-red, 16px 20px 0 $pokeball-red, 20px 20px 0 $black, 24px 20px 0 $black, 28px 20px 0 $pokeball-red, 32px 20px 0 $pokeball-red, 36px 20px 0 $pokeball-red, 40px 20px 0 $pokeball-red, 44px 20px 0 $black, 
+        //Row: 7
+        0px 24px 0 $black, 4px 24px 0 $black, 8px 24px 0 $pokeball-red, 12px 24px 0 $pokeball-red, 16px 24px 0 $black, 20px 24px 0 $white, 24px 24px 0 $pokeball-gray, 28px 24px 0 $black, 32px 24px 0 $pokeball-red, 36px 24px 0 $pokeball-red, 40px 24px 0 $black, 44px 24px 0 $black, 
+        //Row: 8
+        0px 28px 0 $black, 4px 28px 0 $white, 8px 28px 0 $black, 12px 28px 0 $black, 16px 28px 0 $black, 20px 28px 0 $pokeball-gray, 24px 28px 0 $pokeball-gray, 28px 28px 0 $black, 32px 28px 0 $black, 36px 28px 0 $black, 40px 28px 0 $pokeball-gray, 44px 28px 0 $black,
+        //Row: 9
+        4px 32px 0 $black, 8px 32px 0 $white, 12px 32px 0 $white, 16px 32px 0 $white, 20px 32px 0 $black, 24px 32px 0 $black, 28px 32px 0 $pokeball-gray, 32px 32px 0 $pokeball-gray, 36px 32px 0 $pokeball-gray, 40px 32px 0 $black,
+        //Row: 10
+        4px 36px 0 $black, 8px 36px 0 $pokeball-gray, 12px 36px 0 $white, 16px 36px 0 $white, 20px 36px 0 $white, 24px 36px 0 $pokeball-gray, 28px 36px 0 $pokeball-gray, 32px 36px 0 $pokeball-gray, 36px 36px 0 $pokeball-gray, 40px 36px 0 $black,
+        //Row: 11
+        8px 40px 0 $black, 12px 40px 0 $black, 16px 40px 0 $pokeball-gray, 20px 40px 0 $pokeball-gray, 24px 40px 0 $pokeball-gray, 28px 40px 0 $pokeball-gray, 32px 40px 0 $black, 36px 40px 0 $black,
+        //Row: 12
+        16px 44px 0 $black, 20px 44px 0 $black, 24px 44px 0 $black, 28px 44px 0 $black
+        ;
+    }
+    &.great {
+      animation-delay: 0.25s;
+      margin: -4px 0 0 54px;
+      box-shadow: 
+        //Row: 1
+        16px 0 0 $black, 20px 0 0 $black, 24px 0 0 $black, 28px 0 0 $black,
+        //Row: 2
+        8px 4px 0 $black, 12px 4px 0 $black, 16px 4px 0 $pokeball-blue, 20px 4px 0 $pokeball-blue, 24px 4px 0 $pokeball-blue, 28px 4px 0 $pokeball-blue, 32px 4px 0 $black, 36px 4px 0 $black,
+        //Row: 3
+        4px 8px 0 $black, 8px 8px 0 $pokeball-red, 12px 8px 0 $pokeball-red, 16px 8px 0 $pokeball-blue, 20px 8px 0 $pokeball-blue, 24px 8px 0 $pokeball-blue, 28px 8px 0 $pokeball-blue, 32px 8px 0 $pokeball-red, 36px 8px 0 $pokeball-red, 40px 8px 0 $black, 
+        //Row: 4
+        4px 12px 0 $black, 8px 12px 0 $pokeball-red, 12px 12px 0 $pokeball-red, 16px 12px 0 $pokeball-red, 20px 12px 0 $pokeball-blue, 24px 12px 0 $pokeball-blue, 28px 12px 0 $pokeball-red, 32px 12px 0 $pokeball-red, 36px 12px 0 $pokeball-red, 40px 12px 0 $black,
+        //Row: 5
+        0px 16px 0 $black, 4px 16px 0 $pokeball-blue, 8px 16px 0 $pokeball-blue, 12px 16px 0 $pokeball-red, 16px 16px 0 $pokeball-red, 20px 16px 0 $pokeball-blue, 24px 16px 0 $pokeball-blue, 28px 16px 0 $pokeball-red, 32px 16px 0 $pokeball-red, 36px 16px 0 $pokeball-blue, 40px 16px 0 $pokeball-blue, 44px 16px 0 $black,
+        //Row: 6
+        0px 20px 0 $black, 4px 20px 0 $pokeball-blue, 8px 20px 0 $pokeball-blue, 12px 20px 0 $pokeball-blue, 16px 20px 0 $pokeball-blue, 20px 20px 0 $black, 24px 20px 0 $black, 28px 20px 0 $pokeball-blue, 32px 20px 0 $pokeball-blue, 36px 20px 0 $pokeball-blue, 40px 20px 0 $pokeball-blue, 44px 20px 0 $black, 
+        //Row: 7
+        0px 24px 0 $black, 4px 24px 0 $black, 8px 24px 0 $pokeball-blue, 12px 24px 0 $pokeball-blue, 16px 24px 0 $black, 20px 24px 0 $white, 24px 24px 0 $pokeball-gray, 28px 24px 0 $black, 32px 24px 0 $pokeball-blue, 36px 24px 0 $pokeball-blue, 40px 24px 0 $black, 44px 24px 0 $black, 
+        //Row: 8
+        0px 28px 0 $black, 4px 28px 0 $white, 8px 28px 0 $black, 12px 28px 0 $black, 16px 28px 0 $black, 20px 28px 0 $pokeball-gray, 24px 28px 0 $pokeball-gray, 28px 28px 0 $black, 32px 28px 0 $black, 36px 28px 0 $black, 40px 28px 0 $pokeball-gray, 44px 28px 0 $black,
+        //Row: 9
+        4px 32px 0 $black, 8px 32px 0 $white, 12px 32px 0 $white, 16px 32px 0 $white, 20px 32px 0 $black, 24px 32px 0 $black, 28px 32px 0 $pokeball-gray, 32px 32px 0 $pokeball-gray, 36px 32px 0 $pokeball-gray, 40px 32px 0 $black,
+        //Row: 10
+        4px 36px 0 $black, 8px 36px 0 $pokeball-gray, 12px 36px 0 $white, 16px 36px 0 $white, 20px 36px 0 $white, 24px 36px 0 $pokeball-gray, 28px 36px 0 $pokeball-gray, 32px 36px 0 $pokeball-gray, 36px 36px 0 $pokeball-gray, 40px 36px 0 $black,
+        //Row: 11
+        8px 40px 0 $black, 12px 40px 0 $black, 16px 40px 0 $pokeball-gray, 20px 40px 0 $pokeball-gray, 24px 40px 0 $pokeball-gray, 28px 40px 0 $pokeball-gray, 32px 40px 0 $black, 36px 40px 0 $black,
+        //Row: 12
+        16px 44px 0 $black, 20px 44px 0 $black, 24px 44px 0 $black, 28px 44px 0 $black
+        ;
+    }
+    &.ultra {
+      animation-delay: 0.5s;
+      margin: -4px 0 0 108px;
+      box-shadow: 
+        //Row: 1
+        16px 0 0 $black, 20px 0 0 $black, 24px 0 0 $black, 28px 0 0 $black,
+        //Row: 2
+        8px 4px 0 $black, 12px 4px 0 $black, 16px 4px 0 $pokeball-yellow, 20px 4px 0 $pokeball-yellow, 24px 4px 0 $pokeball-yellow, 28px 4px 0 $pokeball-yellow, 32px 4px 0 $black, 36px 4px 0 $black,
+        //Row: 3
+        4px 8px 0 $black, 8px 8px 0 $pokeball-yellow, 12px 8px 0 $pokeball-yellow, 16px 8px 0 $pokeball-yellow, 20px 8px 0 $pokeball-yellow, 24px 8px 0 $pokeball-yellow, 28px 8px 0 $pokeball-yellow, 32px 8px 0 $pokeball-yellow, 36px 8px 0 $pokeball-yellow, 40px 8px 0 $black, 
+        //Row: 4
+        4px 12px 0 $black, 8px 12px 0 $pokeball-yellow, 12px 12px 0 $pokeball-yellow, 16px 12px 0 $black, 20px 12px 0 $black, 24px 12px 0 $black, 28px 12px 0 $black, 32px 12px 0 $pokeball-yellow, 36px 12px 0 $pokeball-yellow, 40px 12px 0 $black,
+        //Row: 5
+        0px 16px 0 $black, 4px 16px 0 $black, 8px 16px 0 $pokeball-yellow, 12px 16px 0 $pokeball-yellow, 16px 16px 0 $black, 20px 16px 0 $black, 24px 16px 0 $black, 28px 16px 0 $black, 32px 16px 0 $pokeball-yellow, 36px 16px 0 $pokeball-yellow, 40px 16px 0 $black, 44px 16px 0 $black,
+        //Row: 6
+        0px 20px 0 $black, 4px 20px 0 $black, 8px 20px 0 $black, 12px 20px 0 $black, 16px 20px 0 $black, 20px 20px 0 $black, 24px 20px 0 $black, 28px 20px 0 $black, 32px 20px 0 $black, 36px 20px 0 $black, 40px 20px 0 $black, 44px 20px 0 $black, 
+        //Row: 7
+        0px 24px 0 $black, 4px 24px 0 $black, 8px 24px 0 $black, 12px 24px 0 $black, 16px 24px 0 $black, 20px 24px 0 $white, 24px 24px 0 $pokeball-gray, 28px 24px 0 $black, 32px 24px 0 $black, 36px 24px 0 $black, 40px 24px 0 $black, 44px 24px 0 $black, 
+        //Row: 8
+        0px 28px 0 $black, 4px 28px 0 $white, 8px 28px 0 $black, 12px 28px 0 $black, 16px 28px 0 $black, 20px 28px 0 $pokeball-gray, 24px 28px 0 $pokeball-gray, 28px 28px 0 $black, 32px 28px 0 $black, 36px 28px 0 $black, 40px 28px 0 $pokeball-gray, 44px 28px 0 $black,
+        //Row: 9
+        4px 32px 0 $black, 8px 32px 0 $white, 12px 32px 0 $white, 16px 32px 0 $white, 20px 32px 0 $black, 24px 32px 0 $black, 28px 32px 0 $pokeball-gray, 32px 32px 0 $pokeball-gray, 36px 32px 0 $pokeball-gray, 40px 32px 0 $black,
+        //Row: 10
+        4px 36px 0 $black, 8px 36px 0 $pokeball-gray, 12px 36px 0 $white, 16px 36px 0 $white, 20px 36px 0 $white, 24px 36px 0 $pokeball-gray, 28px 36px 0 $pokeball-gray, 32px 36px 0 $pokeball-gray, 36px 36px 0 $pokeball-gray, 40px 36px 0 $black,
+        //Row: 11
+        8px 40px 0 $black, 12px 40px 0 $black, 16px 40px 0 $pokeball-gray, 20px 40px 0 $pokeball-gray, 24px 40px 0 $pokeball-gray, 28px 40px 0 $pokeball-gray, 32px 40px 0 $black, 36px 40px 0 $black,
+        //Row: 12
+        16px 44px 0 $black, 20px 44px 0 $black, 24px 44px 0 $black, 28px 44px 0 $black
+        ;
+    }
+    &.master {
+      animation-delay: 0.75s;
+      margin: -4px 0 0 162px;
+      box-shadow: 
+        //Row: 1
+        16px 0 0 $black, 20px 0 0 $black, 24px 0 0 $black, 28px 0 0 $black,
+        //Row: 2
+        8px 4px 0 $black, 12px 4px 0 $black, 16px 4px 0 $pokeball-purple, 20px 4px 0 $pokeball-purple, 24px 4px 0 $pokeball-purple, 28px 4px 0 $pokeball-purple, 32px 4px 0 $black, 36px 4px 0 $black,
+        //Row: 3
+        4px 8px 0 $black, 8px 8px 0 $pokeball-pink, 12px 8px 0 $pokeball-pink, 16px 8px 0 $pokeball-purple, 20px 8px 0 $pokeball-purple, 24px 8px 0 $pokeball-purple, 28px 8px 0 $pokeball-purple, 32px 8px 0 $pokeball-pink, 36px 8px 0 $pokeball-pink, 40px 8px 0 $black, 
+        //Row: 4
+        4px 12px 0 $black, 8px 12px 0 $pokeball-pink, 12px 12px 0 $white, 16px 12px 0 $white, 20px 12px 0 $pokeball-purple, 24px 12px 0 $pokeball-purple, 28px 12px 0 $white, 32px 12px 0 $white, 36px 12px 0 $pokeball-pink, 40px 12px 0 $black,
+        //Row: 5
+        0px 16px 0 $black, 4px 16px 0 $pokeball-purple, 8px 16px 0 $pokeball-purple, 12px 16px 0 $white, 16px 16px 0 $pokeball-purple, 20px 16px 0 $white, 24px 16px 0 $white, 28px 16px 0 $pokeball-purple, 32px 16px 0 $white, 36px 16px 0 $pokeball-purple, 40px 16px 0 $pokeball-purple, 44px 16px 0 $black,
+        //Row: 6
+        0px 20px 0 $black, 4px 20px 0 $pokeball-purple, 8px 20px 0 $pokeball-purple, 12px 20px 0 $pokeball-purple, 16px 20px 0 $pokeball-purple, 20px 20px 0 $black, 24px 20px 0 $black, 28px 20px 0 $pokeball-purple, 32px 20px 0 $pokeball-purple, 36px 20px 0 $pokeball-purple, 40px 20px 0 $pokeball-purple, 44px 20px 0 $black, 
+        //Row: 7
+        0px 24px 0 $black, 4px 24px 0 $black, 8px 24px 0 $pokeball-purple, 12px 24px 0 $pokeball-purple, 16px 24px 0 $black, 20px 24px 0 $white, 24px 24px 0 $pokeball-gray, 28px 24px 0 $black, 32px 24px 0 $pokeball-purple, 36px 24px 0 $pokeball-purple, 40px 24px 0 $black, 44px 24px 0 $black, 
+        //Row: 8
+        0px 28px 0 $black, 4px 28px 0 $white, 8px 28px 0 $black, 12px 28px 0 $black, 16px 28px 0 $black, 20px 28px 0 $pokeball-gray, 24px 28px 0 $pokeball-gray, 28px 28px 0 $black, 32px 28px 0 $black, 36px 28px 0 $black, 40px 28px 0 $pokeball-gray, 44px 28px 0 $black,
+        //Row: 9
+        4px 32px 0 $black, 8px 32px 0 $white, 12px 32px 0 $white, 16px 32px 0 $white, 20px 32px 0 $black, 24px 32px 0 $black, 28px 32px 0 $pokeball-gray, 32px 32px 0 $pokeball-gray, 36px 32px 0 $pokeball-gray, 40px 32px 0 $black,
+        //Row: 10
+        4px 36px 0 $black, 8px 36px 0 $pokeball-gray, 12px 36px 0 $white, 16px 36px 0 $white, 20px 36px 0 $white, 24px 36px 0 $pokeball-gray, 28px 36px 0 $pokeball-gray, 32px 36px 0 $pokeball-gray, 36px 36px 0 $pokeball-gray, 40px 36px 0 $black,
+        //Row: 11
+        8px 40px 0 $black, 12px 40px 0 $black, 16px 40px 0 $pokeball-gray, 20px 40px 0 $pokeball-gray, 24px 40px 0 $pokeball-gray, 28px 40px 0 $pokeball-gray, 32px 40px 0 $black, 36px 40px 0 $black,
+        //Row: 12
+        16px 44px 0 $black, 20px 44px 0 $black, 24px 44px 0 $black, 28px 44px 0 $black
+        ;
+    }
+    &.safari {
+      animation-delay: 1s;
+      margin: -4px 0 0 216px;
+      box-shadow: 
+        //Row: 1
+        16px 0 0 $black, 20px 0 0 $black, 24px 0 0 $black, 28px 0 0 $black,
+        //Row: 2
+        8px 4px 0 $black, 12px 4px 0 $black, 16px 4px 0 $pokeball-brown, 20px 4px 0 $pokeball-brown, 24px 4px 0 $pokeball-moss, 28px 4px 0 $pokeball-green, 32px 4px 0 $black, 36px 4px 0 $black,
+        //Row: 3
+        4px 8px 0 $black, 8px 8px 0 $pokeball-moss, 12px 8px 0 $pokeball-moss, 16px 8px 0 $pokeball-moss, 20px 8px 0 $pokeball-brown, 24px 8px 0 $pokeball-brown, 28px 8px 0 $pokeball-green, 32px 8px 0 $pokeball-moss, 36px 8px 0 $pokeball-brown, 40px 8px 0 $black, 
+        //Row: 4
+        4px 12px 0 $black, 8px 12px 0 $pokeball-brown, 12px 12px 0 $pokeball-brown, 16px 12px 0 $pokeball-brown, 20px 12px 0 $pokeball-brown, 24px 12px 0 $pokeball-brown, 28px 12px 0 $pokeball-green, 32px 12px 0 $pokeball-moss, 36px 12px 0 $pokeball-moss, 40px 12px 0 $black,
+        //Row: 5
+        0px 16px 0 $black, 4px 16px 0 $pokeball-green, 8px 16px 0 $pokeball-moss, 12px 16px 0 $pokeball-green, 16px 16px 0 $pokeball-green, 20px 16px 0 $pokeball-moss, 24px 16px 0 $pokeball-moss, 28px 16px 0 $pokeball-moss, 32px 16px 0 $pokeball-green, 36px 16px 0 $pokeball-brown, 40px 16px 0 $pokeball-brown, 44px 16px 0 $black,
+        //Row: 6
+        0px 20px 0 $black, 4px 20px 0 $pokeball-green, 8px 20px 0 $pokeball-moss, 12px 20px 0 $pokeball-green, 16px 20px 0 $pokeball-moss, 20px 20px 0 $black, 24px 20px 0 $black, 28px 20px 0 $pokeball-moss, 32px 20px 0 $pokeball-moss, 36px 20px 0 $pokeball-green, 40px 20px 0 $pokeball-green, 44px 20px 0 $black, 
+        //Row: 7
+        0px 24px 0 $black, 4px 24px 0 $black, 8px 24px 0 $pokeball-moss, 12px 24px 0 $pokeball-moss, 16px 24px 0 $black, 20px 24px 0 $white, 24px 24px 0 $pokeball-gray, 28px 24px 0 $black, 32px 24px 0 $pokeball-brown, 36px 24px 0 $pokeball-brown, 40px 24px 0 $black, 44px 24px 0 $black, 
+        //Row: 8
+        0px 28px 0 $black, 4px 28px 0 $white, 8px 28px 0 $black, 12px 28px 0 $black, 16px 28px 0 $black, 20px 28px 0 $pokeball-gray, 24px 28px 0 $pokeball-gray, 28px 28px 0 $black, 32px 28px 0 $black, 36px 28px 0 $black, 40px 28px 0 $pokeball-gray, 44px 28px 0 $black,
+        //Row: 9
+        4px 32px 0 $black, 8px 32px 0 $white, 12px 32px 0 $white, 16px 32px 0 $white, 20px 32px 0 $black, 24px 32px 0 $black, 28px 32px 0 $pokeball-gray, 32px 32px 0 $pokeball-gray, 36px 32px 0 $pokeball-gray, 40px 32px 0 $black,
+        //Row: 10
+        4px 36px 0 $black, 8px 36px 0 $pokeball-gray, 12px 36px 0 $white, 16px 36px 0 $white, 20px 36px 0 $white, 24px 36px 0 $pokeball-gray, 28px 36px 0 $pokeball-gray, 32px 36px 0 $pokeball-gray, 36px 36px 0 $pokeball-gray, 40px 36px 0 $black,
+        //Row: 11
+        8px 40px 0 $black, 12px 40px 0 $black, 16px 40px 0 $pokeball-gray, 20px 40px 0 $pokeball-gray, 24px 40px 0 $pokeball-gray, 28px 40px 0 $pokeball-gray, 32px 40px 0 $black, 36px 40px 0 $black,
+        //Row: 12
+        16px 44px 0 $black, 20px 44px 0 $black, 24px 44px 0 $black, 28px 44px 0 $black
+        ;
+    }
+  }  
+}
+
+@keyframes rotateBall {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotateBall {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(50deg);
+  }
+  0% {
+    transform: rotate(360deg);
+  }
+}

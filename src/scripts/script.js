@@ -1,3 +1,11 @@
+// preloaded function
+var preloader = () => {
+  document.body.classList.add("body-loaded");
+  setTimeout(() => {
+    document.getElementById("preloader").classList.add("preloader-loaded");
+  }, 1000);
+}
+
 // header function
 var headerScrolled = () => {
   function checkScroll() {
@@ -15,4 +23,5 @@ var headerScrolled = () => {
 }
 
 // initialize the functions
+preloader();
 headerScrolled();

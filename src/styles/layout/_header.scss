@@ -12,8 +12,8 @@
   left: 0;
   z-index: 99;
   width: 100%;
-  background: #fff;
-  box-shadow: 0 -5px 15px 0 #000;
+  background: $white;
+  box-shadow: 0 -5px 15px 0 $black;
   opacity: 1;
   transition: .35s ease-in-out all;
 
@@ -141,7 +141,7 @@
             display: flex;
             padding: 8px 15px;
             font-size: 14px;
-            color: #fff;
+            color: $white;
             background-color: $brand-color;
     
             &:before {
@@ -252,7 +252,7 @@
         top: 58px;
         left: 0;
         width: 100%;
-        background: #fff;
+        background: $white;
         border-top: 2px solid $brand-color;
         border-bottom: 2px solid $brand-color;
         pointer-events: none;
