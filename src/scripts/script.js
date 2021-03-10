@@ -27,7 +27,6 @@ var headerFunctions = () => {
   }
 
   $(document).ready( () => {
-    console.log("test");
     checkScroll();
     $(window).scroll(checkScroll);
   });
@@ -57,8 +56,26 @@ var homeHero = () => {
   if (sectionPokeball.length) {
     setTimeout(() => {
       document.getElementById("wrapper_pokeballs").classList.add("show-element");
-    }, 9500);
+    }, 9200);
   }
+
+  function hoverPokeball() {
+    var heroBackground = document.getElementById('hero_background');
+    var pokeball = document.getElementById('wrapper_pokeballs').getElementsByClassName('pokeball');
+    for (var i = 0; i < pokeball.length; i++) {
+      pokeball[i].addEventListener("mouseover", function() {
+        var imageSrc = this.dataset.image;
+        heroBackground.style.backgroundImage = 'url("'+imageSrc+'")';
+        // console.log(this);
+      }),
+      pokeball[i].addEventListener("mouseleave", function() {
+        var defaultBlack = "../assets/images/bg-black.jpg"; 
+        heroBackground.style.backgroundImage = 'url("'+defaultBlack+'")';
+      });
+    }
+  }
+
+  hoverPokeball();
 }
 
 // initialize the functions

@@ -352,6 +352,18 @@
         max-height: 45px;
       }
 
+      .navbar a {
+        &:before {
+          bottom: -17px;
+        }
+
+        @include on-event() {
+          &:before {
+            bottom: -10px;
+          }
+        }
+      }
+
       .navbar-nav .menu-dropdown:hover ul {
         top: 45px;
       }
