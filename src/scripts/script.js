@@ -7,7 +7,7 @@ var preloader = () => {
 }
 
 // header function
-var headerScrolled = () => {
+var headerFunctions = () => {
   function checkScroll() {
     if ($(window).scrollTop() >= 50) {
       $(".header-main").addClass("header-scrolled");
@@ -15,13 +15,53 @@ var headerScrolled = () => {
       $(".header-main").removeClass("header-scrolled");
     }
   }
-  
-  $(document).ready(function() {
+
+  function headerLoaded() {
+    window.onload = function () {
+      if (document.querySelector("main").classList.contains("page-home")) {
+        setTimeout(() => {
+          document.getElementById("header_main").classList.add("header-loaded");
+        }, 1500);
+      }
+    }
+  }
+
+  $(document).ready( () => {
+    console.log("test");
     checkScroll();
     $(window).scroll(checkScroll);
   });
+
+  headerLoaded();
+}
+
+// home page - hero section
+var homeHero = () => {
+  setTimeout(() => {
+    document.getElementById("home_hero_pokeball_image").classList.remove("zoom");
+  }, 1300);
+  setTimeout(() => {
+    document.getElementById("home_hero_pokeball_image").classList.add("opacity-0");
+  }, 3500);
+  setTimeout(() => {
+    document.getElementById("typing_text").parentElement.classList.remove("opacity-0");
+    document.getElementById("typing_text").parentElement.classList.add("opacity-100");
+  }, 4000);
+  setTimeout(() => {
+    document.getElementById("typing_text").parentElement.classList.remove("opacity-100");
+    document.getElementById("typing_text").parentElement.classList.add("opacity-0");
+  }, 9000);
+
+  var sectionPokeball = document.getElementsByClassName("wrapper-pokeballs");
+
+  if (sectionPokeball.length) {
+    setTimeout(() => {
+      document.getElementById("wrapper_pokeballs").classList.add("show-element");
+    }, 9500);
+  }
 }
 
 // initialize the functions
 preloader();
-headerScrolled();
+headerFunctions();
+homeHero();

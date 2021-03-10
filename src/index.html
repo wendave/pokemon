@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <header class="header-main">
+  <header id="header_main" class="header-main">
     <nav class="navbar navbar-expand-md">
       <div class="container">
         <a href="#" class="logo-link">
@@ -61,10 +61,20 @@
   </header>
   <main class="page-home">
     <section class="hero">
+      <div id="home_hero_pokeball_image" class="image-wrapper zoom">
+        <div class="image-pokeball" style="background-image: url(assets/images/image-pokeball-banner-abstract.png);"></div>
+      </div>
       <div class="content">
-        <h1>FrontEnd Template</h1>
-        <h4>Coding made simpler</h4>
-        <a href="#" class="btn btn-white-outline">Learn More</a>
+        <div class="wrapper-text opacity-0">
+          <h1 id="typing_text" class="typing-text">Choose your Pok&eacute;mon<span class="cursor-blink">|</span></h1>
+        </div>
+      </div>
+      <div id="wrapper_pokeballs" class="wrapper-pokeballs">
+        <div class="hero-pokeballs">
+          <div class="pokeball bulbasaur"></div>
+          <div class="pokeball charmander"></div>
+          <div class="pokeball squirtle"></div>
+        </div>
       </div>
     </section>
     <section class="blog">
