@@ -1,0 +1,16 @@
+//main: ../main.scss
+
+// --------------------------------------------------------------------------------------------
+// This file contains all styles related to the section swiper starter of the site/application.
+// --------------------------------------------------------------------------------------------
+
+.swiper-starter {
+  .swiper-container .swiper-notification {
+    display: none;
+  }
+  
+  .swiper-slide {
+    height: 100vh;
+    min-height: 700px;
+  }
+}

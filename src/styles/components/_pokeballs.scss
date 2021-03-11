@@ -93,7 +93,6 @@
       transform: rotate(0deg);
     }
   }
-  
   @keyframes anti-wiggle {
     20% {
       transform: translateX(4px) rotate(-7deg);
@@ -113,6 +112,35 @@
     
     100% {
       transform: translateX(0px) rotate(0deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .pokeball:nth-child(2) {
+      margin: 0 35px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .pokeball {
+      width: 70px;
+      height: 70px;
+      box-shadow: inset 0 -63px 0 -37px $dusty-gray, inset 0 -66px 0 -35px $black, 0 0 0 5px $black;
+
+      &:before {
+        top: 36px;
+        left: 32px;
+        width: 8px;
+        height: 8px;
+      }
+
+      &:nth-child(2) {
+        margin: 0 25px;
+      }
+
+      @include on-event() {
+        box-shadow:  inset 0 -63px 0 -37px $white, inset 0 -66px 0 -35px $black, 0 0 0 5px $black;
+      }
     }
   }
 }

@@ -75,10 +75,30 @@ var homeHero = () => {
     }
   }
 
+  function clickPokeball() {
+    // $(".swiper-pagination-clickable .swiper-pagination-bullet:nth-child(3)").click();
+  }
+
   hoverPokeball();
 }
+
+// swipers
+var swipers = () => {
+  var pokemonStarter = new Swiper('.swiper-starter .swiper-container', {
+    touchRatio: 0,
+    pagination: {
+      el: '.swiper-starter .swiper-pagination',
+      clickable: true,
+      // renderBullet: function (index, className) {
+      //   return '<span class="' + className + '">' + (index + 1) + '</span>';
+      // },
+    },
+  });
+}
+
 
 // initialize the functions
 preloader();
 headerFunctions();
 homeHero();
+swipers();
