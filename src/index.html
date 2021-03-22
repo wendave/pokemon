@@ -128,7 +128,17 @@
     </section>
     <section class="gameboy">
       <!-- iframe -->
-      <div class="iframe-container"><iframe loading="lazy" src="https://pokemon-battle.herokuapp.com/"></iframe></div>
+      <div class="video-background">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/rg6CiPI6h2g?autoplay=1&loop=1&autopause=0&mute=1&controls=0&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; modestbranding; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <video width="320" height="240" controls>
+          <source src="https://www.youtube.com/embed/rg6CiPI6h2g" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+        <iframe src="https://www.youtube.com/embed/rg6CiPI6h2g?autoplay=1&mute=1&loop=1&controls=0" frameborder="0" allow="autoplay"></iframe>
+      </div>
+      <div class="iframe-container">
+        <iframe loading="lazy" src="https://pokemon-battle.herokuapp.com/"></iframe>
+      </div>
     </section>
     <section class="pokemon-cards">
       <div class="container">
@@ -235,60 +245,29 @@
     </section>
   </main>
   <footer class="footer-main">
-    <div class="bg-text">
-      <span>frontend</span>
-      <span>template</span>
-    </div>
     <div class="container">
-      <div class="image-holder">
+      <div class="logo-holder">
         <img src="./assets/images/logo-dark.png" class="footer-logo lazyload" alt="logo" />
+      </div>
+      <div class="image-holder">
+        <img src="./assets/images/image-footer.jpg" class="footer-image lazyload img-fluid" alt="logo" />
       </div>
       <ul class="list-unstyled page-links">
         <li>
-          <a href="#">Page 1</a>
+          <a href="#">Home</a>
         </li>
         <li>
-          <a href="#">Page 2</a>
+          <a href="#">Gallery</a>
         </li>
         <li>
-          <a href="#">Page 3</a>
+          <a href="#">Pok&eacute;mon</a>
         </li>
         <li>
-          <a href="#">Page 4</a>
+          <a href="#">Contact</a>
         </li>
       </ul>
       <div class="copyright">
-        <p>&copy; FrontEnd Template 2021.</p>
-        <ul class="list-unstyled copyright-links">
-          <li>
-            <a href="#">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="#">Terms &amp; Conditions</a>
-          </li>
-        </ul>
-        <ul class="list-unstyled social-links">
-          <li>
-            <a href="#">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </li>
-        </ul>
+        <p>&copy; 2021 | All rights reserved.</p>
       </div>
     </div>
   </footer>
