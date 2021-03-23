@@ -4,12 +4,19 @@
 // This file contains all styles related to the section gameboy of the site/application.
 // --------------------------------------------------------------------------------------------
 
-.iframe-container {
-  position: relative;
-  height: 100vh;
-  padding: 100px;
-  overflow: hidden;
+.gameboy {
+  video {
+    pointer-events: none;
+    filter: grayscale(1);
+  }
 
+  .iframe-wrapper {
+    position: relative;
+    height: 100vh;
+    padding: 100px;
+    overflow: hidden;
+  }
+  
   iframe {
     position: absolute;
     top: 0;
@@ -19,8 +26,7 @@
     border: 0;
   }
 
-  .pokemon {
-    height: 100px;
-    width: auto;
+  .col-md-6 {
+    width: 100%;
   }
 }
