@@ -45,22 +45,30 @@ var homeHero = () => {
     var pokeslides = document.querySelector(".swiper-starter").getElementsByClassName('swiper-slide');
 
     function hoverPokeball() {
+      // for (var i = 0; i < pokeball.length; i++) {
+      //   pokeball[i].addEventListener("mouseover", function() {
+      //     var imageSrc = this.dataset.image;
+      //     heroBackground.style.backgroundImage = 'url("'+imageSrc+'")';
+      //   }),
+      //   pokeball[i].addEventListener("mouseleave", function() {
+      //     var defaultBlack = "../assets/images/bg-black.jpg"; 
+      //     heroBackground.style.backgroundImage = 'url("'+defaultBlack+'")';
+      //   });
+      // }
+
       for (var i = 0; i < pokeball.length; i++) {
         pokeball[i].addEventListener("mouseover", function() {
           var imageSrc = this.dataset.image;
-          heroBackground.style.backgroundImage = 'url("'+imageSrc+'")';
-          // console.log(this);
+          heroBackground.src = imageSrc;
         }),
         pokeball[i].addEventListener("mouseleave", function() {
           var defaultBlack = "../assets/images/bg-black.jpg"; 
-          heroBackground.style.backgroundImage = 'url("'+defaultBlack+'")';
+          heroBackground.src = defaultBlack;
         });
       }
     }
 
     function clickPokeball() {
-      // $(".swiper-pagination-clickable .swiper-pagination-bullet:nth-child(3)").click();
-
       // section swiper - add data-slide for each slide
       for (var i = 0; i < pokeslides.length; i++) {
         var pokeSlide = i + 1;
@@ -74,20 +82,10 @@ var homeHero = () => {
 
         pokeball[i].addEventListener("click", function() {
           var selectedNumber = Number(this.dataset.pokemonNumber) + 1;
-          
-          // scroll to next section
-          // setTimeout(() => {
-          //   document.querySelector('.swiper-starter').scrollIntoView({
-          //     behavior: 'smooth',
-          //     duration: 2500
-          //   });
-          // }, 500);
-          // document.querySelector('.swiper-starter').scrollIntoView({
-          //   behavior: 'smooth'
-          // });
+
           $("html, body").animate({
             scrollTop: $(".swiper-starter").offset().top
-          }, 1500);
+          }, 1000);
 
           if ( selectedNumber == 2 ) {
             document.querySelector(".swiper-starter .swiper-pagination-bullet:nth-child(2)").click();

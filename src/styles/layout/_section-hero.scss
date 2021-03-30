@@ -121,6 +121,22 @@
     pointer-events: none;
     transition: .35s ease-in-out all;
   }
+
+  // .hero-background {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   z-index: 1;
+  //   background-repeat: no-repeat;
+  //   background-position: center;
+  //   background-size: cover;
+  //   opacity: .5;
+  //   pointer-events: none;
+  //   transition: .35s ease-in-out all;
+  //   filter: brightness(1) invert(1);
+  // }
   
   @keyframes type { 
     from { 
