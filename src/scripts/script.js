@@ -18,17 +18,32 @@ var headerFunctions = () => {
 
   function headerLoaded() {
     window.onload = function () {
-      if (document.querySelector("main").classList.contains("page-home")) {
-        setTimeout(() => {
-          document.getElementById("header_main").classList.add("header-loaded");
-        }, 1500);
-      }
+      // if (document.querySelector("main").classList.contains("page-home")) {
+      //   setTimeout(() => {
+      //     document.getElementById("header_main").classList.add("header-loaded");
+      //   }, 1500);
+      // }
+      setTimeout(() => {
+        document.getElementById("header_main").classList.add("header-loaded");
+      }, 1500);
+    }
+  }
+
+  function scrollOnPageLoad() {
+    if ($(".page-home").length) {
+      window.scrollTo(0, 0);
     }
   }
 
   $(document).ready( () => {
     checkScroll();
     $(window).scroll(checkScroll);
+  });
+
+  $(window).on("load", function() {
+    setTimeout(() => {
+      scrollOnPageLoad();
+    }, 300);
   });
 
   headerLoaded();
@@ -162,6 +177,8 @@ var swipers = () => {
   if (sectionSwiperStarter.length) {
     var pokemonStarter = new Swiper('.swiper-starter .swiper-container', {
       touchRatio: 0,
+      effect: 'fade',
+      autoHeight: true,
       pagination: {
         el: '.swiper-starter .swiper-pagination',
         clickable: true,
@@ -170,10 +187,105 @@ var swipers = () => {
   }
 }
 
-// home page - section gameboy
-var gameboy = () => {
-  const sectionGameboy = document.querySelectorAll(".gameboy");
+// home page - section legendary
+var holoGradient = () => {
+  const sectionLegendary = document.querySelectorAll(".legendary");
 
+  if (sectionLegendary.length) {
+    var cardCounter = 1;
+    // automatically add class .pokemon-card-[number] and class .pokemon-style-[number]
+    $('.legendary .item').each(function(){
+      $(this).find(".pokemon-card").addClass('pokemon-card-'+cardCounter);
+      $(this).find(".pokemon-style").addClass('pokemon-style-'+cardCounter);
+      cardCounter++;
+    });
+
+    // holo effect for .pokemon-card-1
+    $(".pokemon-card-1").on("mousemove", function(e) {
+      var left = e.offsetX;
+      var top = e.offsetY;
+      var height = $(".pokemon-card-1").height();
+      var width = $(".pokemon-card-1").width();
+      var leftPosition = Math.abs(Math.floor(100 / width * left)-100);
+      var topPosition = Math.abs(Math.floor(100 / height * top)-100);
+      var backgroundPosition = `background-position: ${leftPosition}% ${topPosition}%;`
+      var style = `.pokemon-card-1.active:before { ${backgroundPosition} }`
+      $(".pokemon-card-1").removeClass("active");
+      $(".pokemon-card-1").addClass("active");
+      $(".pokemon-style-1").html(style);
+    }).on("mouseout", function() {
+      $(".pokemon-card-1").removeClass("active");
+    });
+    // holo effect for .pokemon-card-2
+    $(".pokemon-card-2").on("mousemove", function(e) {
+      var left = e.offsetX;
+      var top = e.offsetY;
+      var height = $(".pokemon-card-2").height();
+      var width = $(".pokemon-card-2").width();
+      var leftPosition = Math.abs(Math.floor(100 / width * left)-100);
+      var topPosition = Math.abs(Math.floor(100 / height * top)-100);
+      var backgroundPosition = `background-position: ${leftPosition}% ${topPosition}%;`
+      var style = `.pokemon-card-2.active:before { ${backgroundPosition} }`
+      $(".pokemon-card-2").removeClass("active");
+      $(".pokemon-card-2").addClass("active");
+      $(".pokemon-style-2").html(style);
+    }).on("mouseout", function() {
+      $(".pokemon-card-2").removeClass("active");
+    });
+    // holo effect for .pokemon-card-3
+    $(".pokemon-card-3").on("mousemove", function(e) {
+      var left = e.offsetX;
+      var top = e.offsetY;
+      var height = $(".pokemon-card-3").height();
+      var width = $(".pokemon-card-3").width();
+      var leftPosition = Math.abs(Math.floor(100 / width * left)-100);
+      var topPosition = Math.abs(Math.floor(100 / height * top)-100);
+      var backgroundPosition = `background-position: ${leftPosition}% ${topPosition}%;`
+      var style = `.pokemon-card-3.active:before { ${backgroundPosition} }`
+      $(".pokemon-card-3").removeClass("active");
+      $(".pokemon-card-3").addClass("active");
+      $(".pokemon-style-3").html(style);
+    }).on("mouseout", function() {
+      $(".pokemon-card-3").removeClass("active");
+    });
+    // holo effect for .pokemon-card-4
+    $(".pokemon-card-4").on("mousemove", function(e) {
+      var left = e.offsetX;
+      var top = e.offsetY;
+      var height = $(".pokemon-card-4").height();
+      var width = $(".pokemon-card-4").width();
+      var leftPosition = Math.abs(Math.floor(100 / width * left)-100);
+      var topPosition = Math.abs(Math.floor(100 / height * top)-100);
+      var backgroundPosition = `background-position: ${leftPosition}% ${topPosition}%;`
+      var style = `.pokemon-card-4.active:before { ${backgroundPosition} }`
+      $(".pokemon-card-4").removeClass("active");
+      $(".pokemon-card-4").addClass("active");
+      $(".pokemon-style-4").html(style);
+    }).on("mouseout", function() {
+      $(".pokemon-card-4").removeClass("active");
+    });
+
+    // $(".legendary .items .item").each(function() {
+    //   var $pokemonCard = $(this).find(".pokemon-card");
+    //   var $pokemonStyle = $(this).find(".pokemon-style");
+    //   $pokemonCard.on("mousemove", function(e) {
+    //     var $pokemonCard = $(this);
+    //     var left = e.offsetX;
+    //     var top = e.offsetY;
+    //     var height = $pokemonCard.height();
+    //     var width = $pokemonCard.width();
+    //     var leftPosition = Math.abs(Math.floor(100 / width * left)-100);
+    //     var topPosition = Math.abs(Math.floor(100 / height * top)-100);
+    //     var backgroundPosition = `background-position: ${leftPosition}% ${topPosition}%;`
+    //     var style = `.pokemon-card.active:before { ${backgroundPosition} }`
+    //     $pokemonCard.removeClass("active");
+    //     $pokemonCard.addClass("active");
+    //     $pokemonStyle.html(style);
+    //   }).on("mouseout", function() {
+    //     $pokemonCard.removeClass("active");
+    //   });
+    // });
+  }
 }
 
 
@@ -182,4 +294,4 @@ preloader();
 headerFunctions();
 homeHero();
 swipers();
-gameboy();
+holoGradient();

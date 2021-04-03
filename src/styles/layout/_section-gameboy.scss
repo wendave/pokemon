@@ -5,28 +5,154 @@
 // --------------------------------------------------------------------------------------------
 
 .gameboy {
-  video {
-    pointer-events: none;
-    filter: grayscale(1);
-  }
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  padding: 100px 0;
+  overflow: hidden;
+  background: linear-gradient(15deg,#55b3e0 0,#4790d8 70%,#4772ce 100%);
 
-  .iframe-wrapper {
+  .container {
     position: relative;
-    height: 100vh;
-    padding: 100px;
-    overflow: hidden;
-  }
-  
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    z-index: 2;
     height: 100%;
-    border: 0;
   }
 
-  .col-md-6 {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 600px;
+    height: 100%;
+  }
+
+  h2 {
+    margin: 0;
+    font-family: $font-helvetica-black;
+    font-size: 48px;
+    color: $white;
+  }
+
+  .image-featured {
+    max-width: 95%;
+    max-height: 500px;
+    margin-top: 70px;
+  }
+
+  .column-gameboy {
+    position: absolute;
+    top: 10vh;
+    right: -10vh;
+    width: 40%;
+  }
+
+  .wrapper-gameboy {
+    position: absolute;
+    top: initial;
+    right: 0;
+    bottom: 0;
+    left: initial;
+  }
+
+  .video-wrapper {
+    position: absolute;
+    top: 17.7%;
+    right: 0;
+    bottom: initial;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52%;
+    margin: auto;
+  }
+
+  video {
     width: 100%;
+    // filter: grayscale(1);
+  }
+
+  .image-gameboy {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  @media (max-width: 1199px) {
+    .wrapper {
+      max-width: 530px;
+    }
+
+    h2 {
+      font-size: 42px;
+    }
+
+    .column-gameboy {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 991px) {
+    height: auto;
+
+    .wrapper {
+      max-width: 450px;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    .image-featured {
+      max-width: 400px;
+    }
+
+    .column-gameboy {
+      top: 35%;
+      right: -9%;
+      width: 48%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 70px 0 0;
+
+    .wrapper {
+      max-width: 100%;
+    }
+
+    h2 {
+      padding: 0 15px;
+      text-align: center;
+    }
+
+    .image-featured {
+      max-width: 400px;
+      max-height: 400px;
+      margin-top: 50px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .column-gameboy {
+      position: relative;
+      right: unset;
+      left: unset;
+      width: 100%;
+      max-width: 440px;
+      margin: 50px auto -300px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .image-featured {
+      max-width: 95%;
+      max-height: 350px;
+    }
+
+    .column-gameboy {
+      max-width: calc(100% - 50px);
+      margin-bottom: -200px;
+    }
   }
 }

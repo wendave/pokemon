@@ -3,7 +3,38 @@
 /**
  * Basic typography style for copy text
  */
+
 body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
+}
+
+.section-heading-hollow {
+  font-family: $font-helvetica-black-hollow;
+  font-size: 50px;
+
+  @media (max-width: 991px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 32px;
+  }
+}
+
+// .section-heading {
+
+// }
+
+.section-subheading {
+  font-family: $font-helveticaneue-bold;
+  font-size: 30px;
+
+  @media (max-width: 991px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 22px;
+  }
 }

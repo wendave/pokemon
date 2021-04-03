@@ -1,0 +1,96 @@
+//main: ../main.scss
+
+/**
+ * Basic typography style for copy text
+**/
+
+.type-label {
+  font-size: 18px;
+  color: $black;
+
+  span {
+    padding: 2px 10px 3px;
+    font-family: $font-helveticaneue-bold;
+    font-size: 16px;
+    color: $white;
+    // text-shadow: 0 0 20px $dusty-gray;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    border-radius: 3px;
+  }
+
+  span + span {
+    margin-left: 3px;
+  }
+}
+
+.type-normal {
+  background-color: $type-normal;
+}
+
+.type-fighting {
+  background-color: $type-fighting;
+}
+
+.type-flying {
+  background-color: $type-flying;
+}
+
+.type-poison {
+  background-color: $type-poison;
+}
+
+.type-ground {
+  background-color: $type-ground;
+}
+
+.type-rock {
+  background-color: $type-rock;
+}
+
+.type-bug {
+  background-color: $type-bug;
+}
+
+.type-ghost {
+  background-color: $type-ghost;
+}
+
+.type-steel {
+  background-color: $type-steel;
+}
+
+.type-fire {
+  background-color: $type-fire;
+}
+
+.type-water {
+  background-color: $type-water;
+}
+
+.type-grass {
+  background-color: $type-grass;
+}
+
+.type-electric {
+  background-color: $type-electric;
+}
+
+.type-psychic {
+  background-color: $type-psychic;
+}
+
+.type-ice {
+  background-color: $type-ice;
+}
+
+.type-dragon {
+  background-color: $type-dragon;
+}
+
+.type-dark {
+  background-color: $type-dark;
+}
+
+.type-fairy {
+  background-color: $type-fairy;
+}

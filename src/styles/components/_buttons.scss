@@ -5,7 +5,7 @@
 // -----------------------------------------------------------------------------
 
 .btn {
-  padding: 10px 30px;
+  padding: 15px 40px;
   font-family: $font-helveticaneue-bold;
   font-size: 16px;
   text-transform: uppercase;
@@ -19,6 +19,10 @@
   @include on-event() {
     text-decoration: none;
     outline: none;
+  }
+  
+  @media (max-width: 767px) {
+    padding: 12px 30px;
   }
 }
 
@@ -54,11 +58,5 @@
     color: $brand-color;
     border-color: #fff;
     background-color: #fff;
-  }
-}
-
-@media (max-width: 991px) {
-  .btn {
-    padding: 8px 25px;
   }
 }

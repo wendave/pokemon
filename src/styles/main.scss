@@ -17,7 +17,8 @@
 @import
   'base/base',
   'base/fonts',
-  'base/typography';
+  'base/typography',
+  'base/pokemon-type';
 
 // 4. Layout-related sections
 @import
@@ -26,7 +27,8 @@
   'layout/section-cta',
   'layout/section-hero',
   'layout/section-swiper-starter',
-  'layout/section-gameboy';
+  'layout/section-gameboy',
+  'layout/section-legendary';
 
 // 5. Components
 @import
