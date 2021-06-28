@@ -119,54 +119,54 @@ var homeHero = () => {
     }
 
     // test time
-    setTimeout(() => {
-      document.getElementById("home_hero_pokeball_image").classList.remove("zoom");
-    }, 100);
-    setTimeout(() => {
-      document.getElementById("home_hero_pokeball_image").classList.add("opacity-0");
-    }, 300);
-    setTimeout(() => {
-      document.getElementById("typing_text").parentElement.classList.remove("opacity-0");
-      document.getElementById("typing_text").parentElement.classList.add("opacity-100");
-    }, 700);
-    setTimeout(() => {
-      document.getElementById("typing_text").parentElement.classList.remove("opacity-100");
-      document.getElementById("typing_text").parentElement.classList.add("opacity-0");
-    }, 800);
-    
-    if (sectionPokeball.length) {
-      setTimeout(() => {
-        document.getElementById("wrapper_pokeballs").classList.add("show-element");
-      }, 1000);
-
-      hoverPokeball();
-      clickPokeball();
-    }
-
-    // real time
     // setTimeout(() => {
     //   document.getElementById("home_hero_pokeball_image").classList.remove("zoom");
-    // }, 1300);
+    // }, 100);
     // setTimeout(() => {
     //   document.getElementById("home_hero_pokeball_image").classList.add("opacity-0");
-    // }, 3500);
+    // }, 300);
     // setTimeout(() => {
     //   document.getElementById("typing_text").parentElement.classList.remove("opacity-0");
     //   document.getElementById("typing_text").parentElement.classList.add("opacity-100");
-    // }, 4000);
+    // }, 700);
     // setTimeout(() => {
     //   document.getElementById("typing_text").parentElement.classList.remove("opacity-100");
     //   document.getElementById("typing_text").parentElement.classList.add("opacity-0");
-    // }, 9000);
+    // }, 800);
     
     // if (sectionPokeball.length) {
     //   setTimeout(() => {
     //     document.getElementById("wrapper_pokeballs").classList.add("show-element");
-    //   }, 9200);
+    //   }, 1000);
 
     //   hoverPokeball();
     //   clickPokeball();
     // }
+
+    // real time
+    setTimeout(() => {
+      document.getElementById("home_hero_pokeball_image").classList.remove("zoom");
+    }, 1300);
+    setTimeout(() => {
+      document.getElementById("home_hero_pokeball_image").classList.add("opacity-0");
+    }, 3500);
+    setTimeout(() => {
+      document.getElementById("typing_text").parentElement.classList.remove("opacity-0");
+      document.getElementById("typing_text").parentElement.classList.add("opacity-100");
+    }, 4000);
+    setTimeout(() => {
+      document.getElementById("typing_text").parentElement.classList.remove("opacity-100");
+      document.getElementById("typing_text").parentElement.classList.add("opacity-0");
+    }, 9000);
+    
+    if (sectionPokeball.length) {
+      setTimeout(() => {
+        document.getElementById("wrapper_pokeballs").classList.add("show-element");
+      }, 9200);
+
+      hoverPokeball();
+      clickPokeball();
+    }
   }
 }
 
@@ -179,10 +179,10 @@ var swipers = () => {
       touchRatio: 0,
       effect: 'fade',
       autoHeight: true,
-      pagination: {
-        el: '.swiper-starter .swiper-pagination',
-        clickable: true,
-      },
+      // pagination: {
+      //   el: '.swiper-starter .swiper-pagination',
+      //   clickable: true,
+      // },
     });
   }
 }
@@ -287,7 +287,6 @@ var holoGradient = () => {
     // });
   }
 }
-
 
 // initialize the functions
 preloader();

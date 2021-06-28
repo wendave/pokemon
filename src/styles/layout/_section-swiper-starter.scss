@@ -227,8 +227,9 @@
   
   @media (max-width: 767px) {
     .swiper-slide {
-      padding: 70px 0;
+      height: 100%;
       min-height: unset;
+      padding: 70px 0;
     }
 
     .column-image {
