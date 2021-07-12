@@ -60,17 +60,6 @@ var homeHero = () => {
     var pokeslides = document.querySelector(".swiper-starter").getElementsByClassName('swiper-slide');
 
     function hoverPokeball() {
-      // for (var i = 0; i < pokeball.length; i++) {
-      //   pokeball[i].addEventListener("mouseover", function() {
-      //     var imageSrc = this.dataset.image;
-      //     heroBackground.style.backgroundImage = 'url("'+imageSrc+'")';
-      //   }),
-      //   pokeball[i].addEventListener("mouseleave", function() {
-      //     var defaultBlack = "../assets/images/bg-black.jpg"; 
-      //     heroBackground.style.backgroundImage = 'url("'+defaultBlack+'")';
-      //   });
-      // }
-
       for (var i = 0; i < pokeball.length; i++) {
         pokeball[i].addEventListener("mouseover", function() {
           var imageSrc = this.dataset.image;
@@ -179,10 +168,10 @@ var swipers = () => {
       touchRatio: 0,
       effect: 'fade',
       autoHeight: true,
-      // pagination: {
-      //   el: '.swiper-starter .swiper-pagination',
-      //   clickable: true,
-      // },
+      pagination: {
+        el: '.swiper-starter .swiper-pagination',
+        clickable: true,
+      },
     });
   }
 }
@@ -264,27 +253,6 @@ var holoGradient = () => {
     }).on("mouseout", function() {
       $(".pokemon-card-4").removeClass("active");
     });
-
-    // $(".legendary .items .item").each(function() {
-    //   var $pokemonCard = $(this).find(".pokemon-card");
-    //   var $pokemonStyle = $(this).find(".pokemon-style");
-    //   $pokemonCard.on("mousemove", function(e) {
-    //     var $pokemonCard = $(this);
-    //     var left = e.offsetX;
-    //     var top = e.offsetY;
-    //     var height = $pokemonCard.height();
-    //     var width = $pokemonCard.width();
-    //     var leftPosition = Math.abs(Math.floor(100 / width * left)-100);
-    //     var topPosition = Math.abs(Math.floor(100 / height * top)-100);
-    //     var backgroundPosition = `background-position: ${leftPosition}% ${topPosition}%;`
-    //     var style = `.pokemon-card.active:before { ${backgroundPosition} }`
-    //     $pokemonCard.removeClass("active");
-    //     $pokemonCard.addClass("active");
-    //     $pokemonStyle.html(style);
-    //   }).on("mouseout", function() {
-    //     $pokemonCard.removeClass("active");
-    //   });
-    // });
   }
 }
 
